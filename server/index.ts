@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import scrapeProfile from './scraper/scrapeProfile';
+// import scrapeProfile2 from './scraper/scrapeProfile2';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.post('/api/scrape', async (req: Request, res: Response) => {
 
     try {
         const data = await scrapeProfile(url);
+        // const data = await scrapeProfile2(url);
         return res.status(200).json(data);
         
     } catch (error) {
